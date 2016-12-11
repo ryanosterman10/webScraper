@@ -115,7 +115,7 @@ app.get("/articles", function(req, res) {
 app.get("/articles/:id", function(req, res) {
   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
   Article.findOne({ "_id": req.params.id })
-  // ..and populate all of the notes associated with it
+  // ..and populate all of the comments associated with it
   .populate("comment")
   // now, execute our query
   .exec(function(error, doc) {
@@ -131,12 +131,12 @@ app.get("/articles/:id", function(req, res) {
 });
 
 
-// Create a new note or replace an existing note
+// Create a new comment or replace an existing note
 app.post("/articles/:id", function(req, res) {
   // Create a new note and pass the req.body to the entry
   var newComment = new Comment(req.body);
 
-  // And save the new note the db
+  // And save the new comment the db
   newComment.save(function(error, doc) {
     // Log any errors
     if (error) {
@@ -144,7 +144,7 @@ app.post("/articles/:id", function(req, res) {
     }
     // Otherwise
     else {
-      // Use the article id to find and update it's note
+      // Use the article id to find and update it's comment
       Article.findOneAndUpdate({ "_id": req.params.id }, { "comment": doc._id })
       // Execute the above query
       .exec(function(err, doc) {
