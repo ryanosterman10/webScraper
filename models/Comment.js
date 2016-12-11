@@ -3,7 +3,11 @@ var Schema = mongoose.Schema;
 
 var CommentSchema = new Schema({
 
-  comment: {
+  title: {
+    type: String
+  },
+
+  body: {
     type: String
   },
 
