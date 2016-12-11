@@ -1,0 +1,29 @@
+body{
+background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/10/Backgrounds-American-Football.jpg");
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+.jumbotron{
+	background-color: black;
+	color: white;
+	opacity: 0.8;
+}
+
+.well{
+	background-color: black;
+	color: white;
+	opacity: 0.8;
+}
+
+#titleinput{
+	display: block;
+	margin: auto;
+}
+
+#bodyinput{
+	display: block;
+	margin: auto;
+}
