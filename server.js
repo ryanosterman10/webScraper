@@ -35,7 +35,7 @@ app.use(express.static("public"));
 // Database configuration with mongoose
 var dbURI = 'mongodb://localhost/fantasyfootballnews';
 if (process.env.NODE_ENV === 'production') {
-    dbURI= "";
+    dbURI= "mongodb://heroku_gm3msv87:hrto2g45qt9au1kam2b1gf96fu@ds133158.mlab.com:33158/heroku_gm3msv87";
 }
 mongoose.connect(dbURI);
 var db = mongoose.connection;
